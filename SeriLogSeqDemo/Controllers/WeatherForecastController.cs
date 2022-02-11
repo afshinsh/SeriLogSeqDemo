@@ -34,6 +34,11 @@ namespace SeriLogSeqDemo.Controllers
             else
                 _logger.LogDebug("Debug", rnd);
 
+
+            for (int i = 0; i < Summaries.Length; i++)
+                if (i == 2)
+                    _logger.LogError("i value is {iValue}", i);
+
             _logger.LogInformation("End Scope");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
