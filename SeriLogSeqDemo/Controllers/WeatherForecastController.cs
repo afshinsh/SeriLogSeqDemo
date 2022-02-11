@@ -26,7 +26,15 @@ namespace SeriLogSeqDemo.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.BeginScope("Beginning Get Method");
             var rng = new Random();
+            int rnd = rng.Next(Summaries.Length);
+            if (rnd % 2 == 0)
+                _logger.LogError("Even Number");
+            else
+                _logger.LogDebug("Debug", rnd);
+
+            _logger.LogInformation("End Scope");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
