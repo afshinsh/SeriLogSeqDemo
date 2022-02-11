@@ -35,5 +35,11 @@ namespace SeriLogSeqDemo.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("Test")]
+        public IActionResult GetTest()
+        {
+            return Ok("Return OK");
+        }
     }
 }
