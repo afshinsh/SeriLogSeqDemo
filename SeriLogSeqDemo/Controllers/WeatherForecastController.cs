@@ -47,6 +47,7 @@ namespace SeriLogSeqDemo.Controllers
         [HttpGet("Test")]
         public IActionResult GetTest()
         {
+            _logger.LogInformation("Log For Invoke Test!");
             return Ok("Return OK");
         }
     }
