@@ -16,7 +16,7 @@ namespace SeriLogSeqDemo
         {
 
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsetting.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
 
             Log.Logger = new LoggerConfiguration()
