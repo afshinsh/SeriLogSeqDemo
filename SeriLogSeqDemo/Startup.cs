@@ -54,6 +54,10 @@ namespace SeriLogSeqDemo
                 {
                     diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
                     diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
+                    diagnosticContext.Set("RequestPathBase", httpContext.Request.PathBase);
+                    diagnosticContext.Set("RequestPath", httpContext.Request.Path);
+                    diagnosticContext.Set("ClientIpAddress", httpContext.Connection.RemoteIpAddress);
+
                 };
             });
             app.UseRouting();
